@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import { BlogCards } from './components/BlogCards/BlogCards';
+import { BlogPage } from './components/BlogPage/BlogPage';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 
@@ -14,13 +14,14 @@ export function App() {
     backgroundColor: 'white'
   }
 
+
   return (
     <div className="App">
 
       <Header />
 
       <main style={mainStyles}>
-        <BlogCards  />
+        <BlogPage />
       </main>
 
       <Footer name="React Blog" year={new Date().getFullYear()} />
