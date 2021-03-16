@@ -5,12 +5,12 @@ import { blogPosts } from '../../shared/projectData'
 import { isArrayEmpty } from '../../shared/projectLogic';
 import { BlogCard } from './components/BlogCard/BlogCard';
 
-console.log(new React.Component())
-
 export class BlogPage extends React.Component {
 
+  fromLocal = localStorage['blogPosts'] ? JSON.parse(localStorage['blogPosts']) : null
+
   state = {
-    blogArr: [...blogPosts],
+    blogArr: this.fromLocal || [...blogPosts],
     blogCardsVisible: true,
   }
 
@@ -22,6 +22,8 @@ export class BlogPage extends React.Component {
     this.setState({
       blogArr: updatedBlogList
     })
+
+    localStorage.setItem('blogPosts', JSON.stringify(updatedBlogList))
     
   }
 
@@ -45,7 +47,7 @@ export class BlogPage extends React.Component {
 
   render() {
 
-    console.log('render')
+    console.log('Render')
 
     const blogCards = isArrayEmpty(this.state.blogArr) ? 'Array is empty' : this.state.blogArr.map((item,pos) => {
       return (
