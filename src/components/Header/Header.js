@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './Header.css'
+import "./Header.css";
 
 export const Header = () => {
   return (
@@ -11,5 +11,5 @@ export const Header = () => {
         <a href="#third">Contact</a>
       </nav>
     </header>
-  )
-}
+  );
+};

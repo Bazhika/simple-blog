@@ -1,14 +1,12 @@
-import React from 'react';
-import './Footer.css'
+import React from "react";
+import "./Footer.css";
 
-export const Footer = ({
-  name,
-  year
-}) => {
-
+export const Footer = ({ name, year }) => {
   return (
     <footer>
-      <span>© {name} - {year}</span>
+      <span>
+        © {name} - {year}
+      </span>
     </footer>
-  )
-}
+  );
+};
